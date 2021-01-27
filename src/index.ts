@@ -1,13 +1,35 @@
 import express from "express";
+import bodyParser from "body-parser";
+import { testData } from "./listing";
 
 const app = express();
 const port = 9000;
 
-const one: number = 1;
-const two: number = 2;
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.send("hello world typescript!");
+});
+
+//creating new routes for test data
+//get data
+app.get("/data", (_req, res) => {
+  //
+  return res.send(testData);
+});
+//delete data
+app.post("/delete-data", (req, res) => {
+  const id: string = req.body.id;
+
+  //find data from id
+  testData.forEach((data, i) => {
+    if (data.id === id) {
+      return res.send(testData.splice(i, 1));
+    }
+  });
+
+  //return no findings
+  return res.send("Failed to delete");
 });
 
 app.listen(port);

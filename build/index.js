@@ -9,7 +9,7 @@ const port = 9000;
 const one = 1;
 const two = 2;
 app.get("/", (req, res) => {
-    res.send("hello world typescript!");
+    res.send(`hello world typescript! ${one + two}`);
 });
 app.listen(port);
 console.log(`[app]: http://localhost:${port}`);
