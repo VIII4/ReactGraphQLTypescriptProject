@@ -10,6 +10,20 @@ interface TestData {
   rating?: number;
 }
 
+interface Animal {
+  name: string;
+  age: number;
+  species: string;
+  mammal: boolean;
+  female: boolean;
+}
+
+//global variables
+let numY: number;
+let numX: number;
+
+const myfunction = (num: number, multiple: number) => num * multiple;
+
 //data array to be exported
 export const testData: TestData[] = [
   {

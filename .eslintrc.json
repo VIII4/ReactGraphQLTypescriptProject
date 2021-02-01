@@ -9,6 +9,6 @@
   "rules": {
     "indent": "off",
     "@typescript-eslint/indent": "off",
-    "@typescript-eslint/explicit-funtion-return-type"
+    "@typescript-eslint/explicit-funtion-return-type": "off"
   }
 }
